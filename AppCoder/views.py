@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import *
+from .forms import *
 
 
 def inicio(request):
@@ -25,14 +26,34 @@ def entregables(request):
 
 def cursoformulario(request):
 
-    print('method: ', request.method)
-    print('post: ', request.post)
+    # print('method: ', request.method)
+    # print('post: ', request.post)
 
-    if request.method == 'POST':
+    # if request.method == 'POST':    
 
-        Curso = curso (nombre=request.post['curso'], camada=request.post['camada'])
-        Curso.save()
+    #     miformulario = cursoformulario(request.POST)
 
-        return render(request, 'inicio.html' )
+    #     print(miformulario)
+
+    #     if miformulario.is_valid:
+
+    #         informacion = miformulario.cleaned_data
+
+    #         Curso = curso (nombre=request.post['curso'], camada=request.post['camada'])
+
+    #         Curso.save()
+
+    #         return render(request, 'inicio.html' )
+
+    # else:
+
+    #     miformulario = cursoformulario()
 
     return render(request, 'cursoformulario.html')
+        
+
+        
+        
+
+        
+
