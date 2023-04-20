@@ -29,28 +29,27 @@ def cursoformulario(request):
     # print('method: ', request.method)
     # print('post: ', request.post)
 
-    # if request.method == 'POST':    
+    if request.method == 'POST':    
 
-    #     miformulario = cursoformulario(request.POST)
+        miformulario = CursoFormulario(request.POST)
 
-    #     print(miformulario)
+        print(miformulario)
 
-    #     if miformulario.is_valid:
+        if miformulario.is_valid:
 
-    #         informacion = miformulario.cleaned_data
+            informacion = miformulario.cleaned_data
 
-    #         Curso = curso (nombre=request.post['curso'], camada=request.post['camada'])
+            curso = Curso(nombre=informacion['curso'], camada=informacion['camada'])
 
-    #         Curso.save()
+            curso.save()
 
-    #         return render(request, 'inicio.html' )
+            return render(request, 'inicio.html' )
 
-    # else:
+    else:
 
-    #     miformulario = cursoformulario()
+        miformulario = CursoFormulario()
 
     return render(request, 'cursoformulario.html')
-        
 
         
         

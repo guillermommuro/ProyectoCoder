@@ -1,5 +1,5 @@
 from django import forms
 
-class CursoFormulario(forms.Form):
+class cursocormulario(forms.Form):
     curso = forms.CharField()
     camada = forms.IntegerField()
